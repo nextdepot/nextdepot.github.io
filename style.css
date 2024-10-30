@@ -44,6 +44,7 @@ svg {
     display: block;
     margin-bottom: 15px;
     text-decoration: none;
+    color: #111;
 }
 
 .dimmed {
