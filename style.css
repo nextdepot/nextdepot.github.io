@@ -47,6 +47,10 @@ svg {
     color: #111;
 }
 
+.links-container hr {
+    margin-bottom: 20px;
+}
+
 .dimmed {
     color: gray !important;
 }
