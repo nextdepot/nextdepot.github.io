@@ -30,24 +30,20 @@
         window.onload = function () {
             const ipInfoDiv = document.getElementById("ip-info");
 
-            fetch("http://ip-api.com/json?fields=17035263")
+            fetch("https://ipinfo.io/json?fields=17035263")
                 .then(response => response.json())
                 .then(data => {
                     // Create HTML content using the API response
                     ipInfoDiv.innerHTML = `
-                        <p><strong>IP:</strong> ${data.query}</p>
-                        <p><strong>Status:</strong> ${data.status}</p>
+                        <p><strong>IP:</strong> ${data.ip}</p>
                         <p><strong>Country:</strong> ${data.country}</p>
-                        <p><strong>Region:</strong> ${data.regionName}</p>
+                        <p><strong>Region:</strong> ${data.region}</p>
                         <p><strong>City:</strong> ${data.city}</p>
-                        <p><strong>ZIP Code:</strong> ${data.zip}</p>
-                        <p><strong>Latitude:</strong> ${data.lat}</p>
-                        <p><strong>Longitude:</strong> ${data.lon}</p>
-                        <p><strong>ISP:</strong> ${data.isp}</p>
+                        <p><strong>ZIP code:</strong> ${data.postal}</p>
+                        <p><strong>Coordinates:</strong> ${data.loc}</p>
+                        <p><strong>Timezone:</strong> ${data.timezone}</p>
+                        <p><strong>Hostname:</strong> ${data.hostname}</p>
                         <p><strong>Org:</strong> ${data.org}</p>
-                        <p><strong>Mobile:</strong> ${data.mobile}</p>
-                        <p><strong>Proxy:</strong> ${data.proxy}</p>
-                        <p><strong>Hosting:</strong> ${data.hosting}</p>
                     `;
                 })
                 .catch(error => {
