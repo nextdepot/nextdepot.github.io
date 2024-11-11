@@ -1,0 +1,62 @@
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <title>Депо | VPN</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&display=swap"
+            rel="stylesheet">
+        <link rel="stylesheet" href="../../style.css">
+    </head>
+
+    <body>
+        <div class="header">
+            <a href="/">
+                <img height="64px" src="../../assets/nd-vpn.svg" />
+                <span>Депо</span>
+            </a>
+        </div>
+
+        <h1>Информация о подключении</h1>
+        <div id="ip-info">
+            Загрузка...
+        </div>
+    </body>
+
+    <script>
+        // Call the API when the page loads
+        window.onload = function () {
+            const ipInfoDiv = document.getElementById("ip-info");
+
+            fetch("http://ip-api.com/json?fields=17035263")
+                .then(response => response.json())
+                .then(data => {
+                    // Create HTML content using the API response
+                    ipInfoDiv.innerHTML = `
+                        <p><strong>IP:</strong> ${data.query}</p>
+                        <p><strong>Status:</strong> ${data.status}</p>
+                        <p><strong>Country:</strong> ${data.country}</p>
+                        <p><strong>Region:</strong> ${data.regionName}</p>
+                        <p><strong>City:</strong> ${data.city}</p>
+                        <p><strong>ZIP Code:</strong> ${data.zip}</p>
+                        <p><strong>Latitude:</strong> ${data.lat}</p>
+                        <p><strong>Longitude:</strong> ${data.lon}</p>
+                        <p><strong>ISP:</strong> ${data.isp}</p>
+                        <p><strong>Org:</strong> ${data.org}</p>
+                        <p><strong>Mobile:</strong> ${data.mobile}</p>
+                        <p><strong>Proxy:</strong> ${data.proxy}</p>
+                        <p><strong>Hosting:</strong> ${data.hosting}</p>
+                    `;
+                })
+                .catch(error => {
+                    console.error("Error fetching IP data:", error);
+                    ipInfoDiv.innerHTML = `
+                        <p><strong>Ошибка!</strong> ${error}</p>
+                    `;
+                });
+        };
+    </script>
+
+</html>
