@@ -51,6 +51,24 @@ svg {
     margin-bottom: 20px;
 }
 
+.heartbeat {
+    animation: heartbeat 1.5s infinite ease-in-out;
+}
+
+@keyframes heartbeat {
+    0% {
+        transform: scale(1.00);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1.00);
+    }
+}
+
 .dimmed {
     color: gray !important;
 }
