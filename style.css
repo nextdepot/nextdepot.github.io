@@ -1,3 +1,11 @@
+:root {
+    --spacing-sm: 5px;
+    --spacing-md: 10px;
+    --spacing-lg: 15px;
+    --spacing-xl: 20px;
+    --spacing-xxl: 25px;
+}
+
 body {
     font-family: "Overpass", sans-serif;
     font-size: 18px;
@@ -37,7 +45,7 @@ svg {
 
 .links-container {
     font-size: 16px;
-    margin: 20px;
+    margin: var(--spacing-xl);
 }
 
 .links-container a {
@@ -48,7 +56,7 @@ svg {
 }
 
 .links-container hr {
-    margin-bottom: 20px;
+    margin-bottom: var(--spacing-xl)
 }
 
 .heartbeat {
@@ -98,7 +106,7 @@ svg {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    border-radius: 20px;
+    border-radius: var(--spacing-xl);
     background-color: #eaf4ff;
     background-position: center center;
     border-color: transparent;
@@ -109,7 +117,7 @@ svg {
 .hero h1 {
     font-size: 36px;
     margin-top: 0px;
-    margin-bottom: 20px;
+    margin-bottom: var(--spacing-xl)
 }
 
 .tl_telegram_share_btn {
@@ -147,4 +155,10 @@ i.tl_telegram_share_icon {
     vertical-align: top;
     display: inline-block;
     /*margin-top: 1px;*/
+}
+
+@media screen and (max-width:800px) {
+    body {
+        padding: 0 25px;
+    }
 }
