@@ -1,30 +1,60 @@
 :root {
+    /* spacings */
     --spacing-sm: 5px;
     --spacing-md: 10px;
     --spacing-lg: 15px;
     --spacing-xl: 20px;
     --spacing-xxl: 25px;
+
+    /* colors */
+    --body-bg-color: #FFF;
+    --body-main-color: #111;
+    --a-href-color: #0969da;
+    --text-color: #111;
+
+    --font-regular: "Overpass", sans-serif;
+    --font-monospace: "JetBrains Mono", monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --body-bg-color: #303030;
+        --body-main-color: #B3B3B3;
+        --a-href-color: #2F81F7;
+        --text-color: #FFF;
+    }
 }
 
 body {
-    font-family: "Overpass", sans-serif;
+    background: var(--body-bg-color);
+    color: var(--body-main-color);
+    font-family: var(--font-regular);
     font-size: 18px;
-    color: #111;
-    background-color: white;
     max-width: 1280px;
     margin: 0 auto;
     padding: 0 50px;
     box-sizing: border-box;
 }
 
+a {
+    color: var(--a-href-color);
+}
+
 h2 {
     font-size: 48px;
     margin: 0.5rem;
+    color: var(--text-color);
 }
 
 svg {
     width: 100%;
     height: auto;
+}
+
+a,
+p,
+span {
+    font-family: var(--font-monospace);
 }
 
 .landing {
@@ -52,7 +82,6 @@ svg {
     display: block;
     margin-bottom: 15px;
     text-decoration: none;
-    color: #111;
 }
 
 .links-container hr {
@@ -92,13 +121,14 @@ svg {
     margin-left: 10px;
     font-weight: 600;
     font-size: 30px;
+    font-family: var(--font-regular);
 }
 
 .header a {
     text-decoration: none;
     display: flex;
     align-items: center;
-    color: #000;
+    color: var(--text-color);
 }
 
 .hero {
@@ -128,7 +158,7 @@ svg {
     background-color: #54a9eb;
     cursor: pointer;
     padding: 10px 25px;
-    color: #FFF;
+    color: var(--text-color);
     font-weight: bold;
     text-decoration: none;
 }
@@ -154,7 +184,6 @@ i.tl_telegram_share_icon {
     line-height: 21px;
     vertical-align: top;
     display: inline-block;
-    /*margin-top: 1px;*/
 }
 
 @media screen and (max-width:800px) {
