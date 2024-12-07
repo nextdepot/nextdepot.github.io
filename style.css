@@ -28,7 +28,7 @@
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --body-bg-color: #303030;
+        --body-bg-color: #181818;
         --body-main-color: #B3B3B3;
         --a-href-color: #2F81F7;
         --text-color: #FFF;
