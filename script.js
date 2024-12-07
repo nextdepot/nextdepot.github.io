@@ -11,3 +11,11 @@ ym(99108334, "init", {
     trackLinks: true,
     accurateTrackBounce: true
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    var footer = document.getElementById("footer");
+    var now = new Date();
+    if (footer) {
+        footer.innerHTML = `<span>Сделано в <a href="/">Депо</a>. ${now.getFullYear()}</span>`;
+    }
+});
