@@ -15,7 +15,10 @@
     /* fonts */
     --font-regular: "Overpass", sans-serif;
     --font-monospace: "JetBrains Mono", monospace;
+    --font-secondary: "Inter", serif;
     --font-size-h1: 42px;
+    --font-size-h2: 34px;
+    --font-size-h3: 28px;
     --font-size-button: 26px;
 
     /* sizes */
@@ -45,6 +48,8 @@
     :root {
         --body-max-width: 640px;
         --font-size-h1: 38px;
+        --font-size-h2: 30px;
+        --font-size-h3: 24px;
         --font-size-button: 18px;
         --button-size: 60px;
         --button-border-radius: 15px;
@@ -76,6 +81,10 @@ h2 {
     color: var(--text-color);
 }
 
+h3 {
+    font-size: var(--font-size-h3);
+}
+
 svg {
     width: 100%;
     height: auto;
@@ -85,6 +94,14 @@ a,
 p,
 span {
     font-family: var(--font-monospace);
+}
+
+a {
+    text-decoration: none;
+}
+
+ol li {
+    margin: 1em 0px
 }
 
 a.external_link::after {
@@ -220,4 +237,38 @@ a.external_link::after {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+}
+
+.announce-button-fixed {
+    position: fixed;
+    bottom: 20px;
+    z-index: 10;
+    left: 0;
+    right: 0 !important;
+    padding: 0 8px;
+    text-align: center;
+    -webkit-transition: opacity .7s;
+    transition: opacity .7s;
+    opacity: 1;
+}
+
+.announce-button-fixed .first {
+    border-right: 1px solid rgba(255, 255, 255, .5)
+}
+
+.announce-button-fixed a {
+    text-decoration: none;
+}
+
+.advantages_cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 40px;
+    margin-top: 40px;
+}
+
+.advantages_cards .callout_card {
+    background-color: var(--callout-background-color);
+    padding: 23px;
+    border-radius: 8px;
 }
