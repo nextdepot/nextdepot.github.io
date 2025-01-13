@@ -70,8 +70,8 @@
                     const currentKey = Object.keys(ipAddressesMap).find(key => ipAddressesMap[key] === data.ip);
 
                     const connectionString = ipAddresses.includes(data.ip)
-                        ? "✅ Подключение к VPN установлено<br/>" + currentKey
-                        : "‼️ Подключение к VPN не установлено";
+                        ? "✅ Подключено к VPN " + currentKey
+                        : "🚫 Нет подключения к VPN";
 
                     ipInfoDiv.innerHTML = `
                         <p>${connectionString}</p>
