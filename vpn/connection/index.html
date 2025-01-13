@@ -56,11 +56,25 @@
         window.onload = function () {
             const ipInfoDiv = document.getElementById("ip-info");
 
+            const ipAddressesMap = {
+                "🇺🇸 США": "35.209.216.42",
+                "🇮🇱 Израиль": "34.0.66.35",
+                "🇩🇪 Германия": "35.207.68.213",
+                "🇷🇺 Россия": "80.249.148.68",
+            };
+
             fetch("https://ipinfo.io/json?fields=17035263")
                 .then(response => response.json())
                 .then(data => {
-                    // Create HTML content using the API response
+                    const ipAddresses = Object.values(ipAddressesMap);
+                    const currentKey = Object.keys(ipAddressesMap).find(key => ipAddressesMap[key] === data.ip);
+
+                    const connectionString = ipAddresses.includes(data.ip)
+                        ? "✅ Подключение к VPN установлено<br/>" + currentKey
+                        : "‼️ Подключение к VPN не установлено";
+
                     ipInfoDiv.innerHTML = `
+                        <p>${connectionString}</p>
                         <p><strong>IP:</strong> ${data.ip}</p>
                         <p><strong>Country:</strong> ${data.country}</p>
                         <p><strong>Region:</strong> ${data.region}</p>
