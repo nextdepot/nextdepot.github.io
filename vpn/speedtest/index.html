@@ -1,53 +1,62 @@
-<html lang="en">
+<!DOCTYPE html>
+<html lang="ru">
 
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-        <title>Депо - VPN</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+        <title>Измерить скорость — Депо VPN</title>
+
+        <!-- Tailwind (same setup as landing) -->
+        <script src="https://cdn.tailwindcss.com"></script>
+
+        <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&display=swap"
-            rel="stylesheet">
         <link
-            href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap"
             rel="stylesheet">
-        <link rel="stylesheet" href="../../style.css">
+
+        <!-- Favicon -->
         <link rel="apple-touch-icon" sizes="180x180" href="../../assets/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="../../assets/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="../../assets/favicon-16x16.png">
         <link rel="manifest" href="../../assets/site.webmanifest">
-        <script src="../../script.js"></script>
+
+        <style>
+            body {
+                font-family: 'Inter', sans-serif;
+            }
+        </style>
     </head>
 
-    <body>
-        <div class="header">
-            <a href="/">
-                <img height="64px" src="../../assets/next-depot-logo.svg" />
-                <span>Депо</span>
+    <body class="bg-white p-4 md:p-8 text-slate-900 dark:bg-slate-950 dark:text-slate-100 font-[Inter]">
+        <!-- Header -->
+        <header
+            class="sticky z-50 top-3 flex items-center justify-between gap-8 rounded-full border border-slate-200 dark:border-slate-800 px-4 py-2 backdrop-blur-xl bg-white/60 dark:bg-slate-900/60 mx-auto w-full max-w-5xl shadow-xs md:top-6">
+            <div class="flex items-center gap-3">
+                <a href="/vpn" class="flex items-center gap-2 font-semibold">
+                    <img src="../../assets/next-depot-logo.svg" alt="Депо VPN"
+                        class="w-8 h-8 rounded-full border border-slate-200 dark:border-slate-700" />
+                    <span>Депо VPN</span>
+                </a>
+            </div>
+            <a href="https://t.me/NextDepotVpnBot"
+                class="inline-flex items-center justify-center h-9 px-4 rounded-full text-sm font-medium bg-blue-600 text-white hover:bg-blue-700 transition">
+                Подключить
             </a>
-        </div>
+        </header>
 
-        <div id="blocks">
-            <div class="block">
-                <div class="container align_center">
-                    <h1>Измерить скорость</h1>
-
-                    <div style="min-height:360px;">
-                        <div style="width:100%;height:0;padding-bottom:50%;position:relative;">
-                            <iframe
-                                style="border:none;width:100%;height:100%;min-height:360px;border:none;overflow:hidden !important;"
-                                src="//openspeedtest.com/speedtest?Run"></iframe>
-                        </div>
-                    </div>
+        <!-- Main content -->
+        <div id="blocks" class="py-12">
+            <div class="container mx-auto text-center">
+                <div class="relative w-full" style="padding-bottom:50%; min-height:360px;">
+                    <iframe src="//openspeedtest.com/speedtest?Run" class="absolute top-0 left-0 w-full h-full border-0"
+                        allowfullscreen loading="lazy">
+                    </iframe>
                 </div>
             </div>
-
-            <div class="space"></div>
-            <div class="space"></div>
-            <div class="space"></div>
         </div>
 
-        <div id="footer"></div>
     </body>
 
 </html>
